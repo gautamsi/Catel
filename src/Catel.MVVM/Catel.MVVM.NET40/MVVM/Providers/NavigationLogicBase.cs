@@ -222,11 +222,16 @@ namespace Catel.MVVM.Providers
                 }
             }
         }
-
+#if NETFX_CORE
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
         public void SetEarlyNavigationContext(object context)
         {
             _navigationAdapter.SetInitialNavigatinContext(context);
         }
+#endif
         #endregion
     }
 }
