@@ -82,6 +82,11 @@ namespace Catel.MVVM.Navigation
 
             _lastNavigationContext = e.Parameter;
         }
+
+        public void SetInitialNavigatinContext(object lastnavigationcontext)
+        {
+            if (_lastNavigationContext == null) _lastNavigationContext = lastnavigationcontext;
+        }
     }
 }
 #endif

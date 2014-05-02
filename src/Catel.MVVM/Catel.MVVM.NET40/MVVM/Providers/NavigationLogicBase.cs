@@ -222,6 +222,11 @@ namespace Catel.MVVM.Providers
                 }
             }
         }
+
+        public void SetEarlyNavigationContext(object context)
+        {
+            _navigationAdapter.SetInitialNavigatinContext(context);
+        }
         #endregion
     }
 }

@@ -393,6 +393,23 @@ namespace Catel.Windows.Controls
         {
             return _logic.SaveViewModel();
         }
+
+#if NETFX_CORE
+        protected override void OnNavigatedTo(global::Windows.UI.Xaml.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            var uriString = string.Empty;
+            if (e.SourcePageType != null)
+            {
+                uriString = e.SourcePageType.ToString();
+            }
+
+            var eventArgs = new NavigatedEventArgs(uriString, NavigationMode.Unknown);
+
+            _logic.SetEarlyNavigationContext(e.Parameter);
+            
+        }
+#endif
         #endregion
     }
 }
